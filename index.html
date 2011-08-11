@@ -3,10 +3,20 @@
   <meta charset="UTF-8">
   <title>Ficha</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
   <h1>Ficha</h1>
+
+  <script type="text/x-handlebars">
+    {{view Ficha.SideView valueBinding="Ficha.cardController.currentCard.front" placeholder="Front Side"}}
+    {{view Ficha.SideView valueBinding="Ficha.cardController.currentCard.back" placeholder="Back Side"}}
+
+    {{#view SC.Button target="Ficha.cardController" action="newCard"}}
+      Create New Card
+    {{/view}}
+  </script>
+
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
   <script src="/lib/sproutcore-2.0.beta.3.js"></script>
   <script src="/lib/main.js"></script>
